@@ -1,0 +1,57 @@
+Antes de comenzar con la demostración del Lema de Dedekind, haremos
+algunas definiciones.
+
+\begin{definicion} 
+    Un \textbf{caracter} de un grupo $G$ en un campo $E$ es un homomofrphismo de grupos
+    
+    \begin{align}
+            \sigma: G \longrightarrow E^{\#}
+    \end{align}
+    
+    Donde $E^{\#} = E - \{0\}$ es el grupo multiplicativo de $E$.
+\end{definicion}
+
+\begin{definicion}
+    Un conjunto $\{\sigma_1 , \sigma_2, \dots, \sigma_n\}$ de caracteres de un grupo $G$ en un campo $E$ es
+    \textbf{independiente} si para todo $x \in G$, no existen $a_1, a_2, \dots, a_n \in E$, no todos 0, tales que 
+    
+    \begin{align}
+            \sum a_i \sigma_i{x} = 0 
+    \end{align}\par\null
+    
+    \begin{sloppypar}
+    \tiny
+        \texttt{
+                [\textbf{Nota:} En el libro se define distinto. 
+                Escriben el $x \in G$ hasta el final. 
+                Definido así quedría decir que basta que exista un $x$
+                para el cual la suma nunca se hace $0$ para que el 
+                conjunto de caracteres es independiente.                
+                Es una sutileza del orden en el que se dicen las 
+                cosas y lo investigué en distintas fuentes 
+                para estar seguro.]}
+    \normalsize
+    \end{sloppypar}
+\end{definicion}
+
+Ahora estamos listos para el Lema de Dedekind.
+
+\begin{lema}
+    Todo conjunto $\{\sigma_1, \dots, \sigma_n\}$ de caracteres distintos de un grupo $G$ en un campo $E$ es independiente.
+\end{lema}
+
+\begin{proof}
+    Procedemos por inducción sobre $n$. 
+    
+    \begin{itemize}
+        \item Hipótesis de inducción\par\null
+            Supongamos que el resultado es válido para cierto $n \geq 1$.\par\null
+            
+        \item Paso inductivo\par\null
+        
+        \item Base de inducción\par\null
+            Sea $n = 1$. Si $\{\sigma_1\}$ no fuera independiente entonces existiría $x \in G$ y $a_1 \in E$, con $a_1 != 0$ 
+            tal que $a_1 \sigma_1(x) = 0$. Pero tanto $a_1$ como $\sigma_1(x)$ son distintos de $0$ y pertenecen a un campo
+            (es decir, a un dominio entero) y por lo tanto no es posible que $a_1 \sigma_1(x) = 0$.\par\null            
+    \end{itemize}
+\end{proof}
