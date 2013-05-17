@@ -24,7 +24,8 @@
 \theoremstyle{dotless}
 \renewenvironment{proof}{{\bfseries Demostración:}}
 
-\newtheorem{teorema}{\;\;Teorema}[section]
+\newtheorem{teorema}{\;\;Teorema}
+\newtheorem{lema}{\;\;Lema}
 \newtheorem{problema}[teorema]{\;\;Problema}
 \newtheorem{definicion}[teorema]{\;\;Definición}
 \newtheorem*{categoria}{Categorías:}
@@ -44,10 +45,13 @@
     
 	\section*{Proposición 11}
         \input{proposicion11.tex}
-        
-	\section*{Proposición 12}
+        \newpage
+	
+    \section*{Proposición 12}
         \input{proposicion12.tex}
-        
+        \newpage
+    
     \section*{Schur-Zassenhaus}
         \input{SchurZassenhaus.tex}
+        
 \end{document}
