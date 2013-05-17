@@ -1,12 +1,22 @@
 \documentclass[a5paper,oneside]{amsart}
-
-\usepackage[utf8]{inputenc}
-\usepackage[scale={.9,.9}]{geometry}
+\usepackage[scale={.8,.85}]{geometry}
 \usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{dsfont}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{mathtools}
+\definecolor{azul}{RGB}{20,40,140}
+\usepackage[colorlinks,linkcolor=azul, citecolor=azul,urlcolor=azul]{hyperref}
+\usepackage{attachfile}
+\usepackage{enumitem}
+\usepackage{courier}
+\usepackage{textcomp}
+
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{bbold}
-\usepackage{dsfont}
+
 \usepackage{amssymb}
 
 \newtheoremstyle{dotless}{}{}{\itshape}{}{\bfseries}{}{ }{}
@@ -27,12 +37,13 @@
 
 \title[Tarea álgebra moderna]{Tarea álgebra moderna\\ Semestre 2013-II\\ Universidad Nacional Autónoma de México\\ Héctor Manuel Téllez Gómez}
 
-\usepackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+
 \begin{document}
 	\maketitle
+    
 	\section*{Proposición 11}
         \input{proposicion11.tex}
         
 	\section*{Proposición 12}
-        %\input{proposicion12.tex}
+        \input{proposicion12.tex}
 \end{document}

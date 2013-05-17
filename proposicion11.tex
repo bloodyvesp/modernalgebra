@@ -1,13 +1,13 @@
-Sea $H$ un grupo cÌclico y sea $N$ un grupo arbitrario. Si $\varphi$ and $\psi$ son monomorfismos 
+Sea $H$ un grupo c√≠clico y sea $N$ un grupo arbitrario. Si $\varphi$ and $\psi$ son monomorfismos 
 de $H$ a $Aut(N)$ tales que $\varphi(H) = \psi(H)$, entonces 
 $N \rtimes_\varphi H \cong N \rtimes_\psi N$. \par\null
 
 \begin{proof}
-    Sea $H = <x>$. Como las im·genes de $H$ bajo $\varphi$ y $\psi$, $\varphi(x)$ y $\psi(x)$ generan
-    al mismo subgrupo cÌcilco de $Aut(N)$. Por lo tanto existen $a,b \in \Z$ tales que 
+    Sea $H = <x>$. Como las im√°genes de $H$ bajo $\varphi$ y $\psi$, $\varphi(x)$ y $\psi(x)$ generan
+    al mismo subgrupo c√≠cilco de $Aut(N)$. Por lo tanto existen $a,b \in \Z$ tales que 
     $\varphi(x)^a = \psi(x)$ y $\varphi(x) = \psi(x)^b$. \\ 
     
-    De aquÌ que:
+    De aqu√≠ que:
     \begin{equation} 
       \varphi(x) = \psi(x)^b = \varphi(x)^{ab} = \varphi(x^{ab}).
     \end{equation}
@@ -19,13 +19,13 @@ $N \rtimes_\varphi H \cong N \rtimes_\psi N$. \par\null
     
     Es decir, elevar a la $ab$ es otra manera de escribir el homomorfismo identidad.		
     
-    Como $H$ es cÌclico tenemos que para todo $h \in H$, existe $r \in \Z$ tal que $x^r = h$ y entonces
+    Como $H$ es c√≠clico tenemos que para todo $h \in H$, existe $r \in \Z$ tal que $x^r = h$ y entonces
     $$
     \varphi(h^a) = \varphi((x^r)^a) = 
     \varphi(x^ar) = (\varphi(x)^a)^r = 
     \psi(x)^r = \psi(x^r) = \psi(h),
     $$ 
-    an·logamente $\varphi(h) = \psi(h^b)$.  \\
+    an√°logamente $\varphi(h) = \psi(h^b)$.  \\
     
     Definamos $\tau : N \rtimes_\varphi H \rightarrow N \rtimes_\psi N$ como $\tau(n,h)= (n, h^a)$.\\
     
@@ -33,19 +33,19 @@ $N \rtimes_\varphi H \cong N \rtimes_\psi N$. \par\null
     \tau((n_1, h_1)(n_2, h_2))	&=  \tau(n_1 \psi(h_1)(n_2), h_1h_2)\\
                                 &= (n_1\psi(h1)(n_2), (h_1 h_2)^a) \\
                                 &= (n_1\varphi(h_1^a)(n_2), h_1^a h_2^a)\\
-                                &= n_1 h_1^a n2 h_2^a  \;\text{(por definiciÛn de} \; N \rtimes_\psi H \text{)}\\
+                                &= n_1 h_1^a n2 h_2^a  \;\text{(por definici√≥n de} \; N \rtimes_\psi H \text{)}\\
                                 &= \tau(n_1 h_1) \tau(n_2 h_2)
     \end{align}
                                     
     Con esto, tenemos que $\tau$ separa productos y manda inversos en inversos. Por lo tanto $\tau$ es
     homomorfismo. \\
     
-    An·logamente $\lambda : N \rtimes_\psi H \rightarrow N \rtimes_\varphi N$
+    An√°logamente $\lambda : N \rtimes_\psi H \rightarrow N \rtimes_\varphi N$
     definida como $\lambda(n,h) = (n, h^b)$, resulta ser homomorfismo.\\
         
     Ahora notemos que $\tau \circ \lambda(n,h) = \tau(n, h^b) = (n, h^{ab})$ y por 
     (\ref{propocicion11:identidad}), tenemos que $\tau \circ \lambda = id_{N \rtimes_\psi H}$.\\
     
-    An·logamente, tenemos que $\lambda \circ \tau = id_{N \rtimes_\varphi H}$. Con esto tenemos que
-    tanto $\tau$ como $\lambda$ son isomorfismos, con lo que termina la demostraciÛn. 
+    An√°logamente, tenemos que $\lambda \circ \tau = id_{N \rtimes_\varphi H}$. Con esto tenemos que
+    tanto $\tau$ como $\lambda$ son isomorfismos, con lo que termina la demostraci√≥n. 
 \end{proof}
