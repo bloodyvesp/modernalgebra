@@ -1,0 +1,35 @@
+Sean $N$ y $H$ grupos, sea $\psi : H \rightarrow Aut(N)$ un homomorfismo y $f \in Aut(N)$. 
+Si $\hat{f}$ es el automorfismo interno de $Aut(N)$ inducido por $f$, entonces
+$N \rtimes_{\hat{f} \circ \psi} \cong N \rtimes_\psi H$.\\
+
+\begin{proof}
+    Sea $\theta : N \rtimes_\psi H \rightarrow N \rtimes_{\hat{f} \circ \psi}$ definida por
+    $\theta(n,h) = (f(n), h)$. Veamos que $\theta$ es homomorfismo:
+    
+    \begin{align}
+        \theta((n_1, h_1)\cdot(n_2, h_2))&= \theta(n_1 \psi(h_1)(n_2), h_1 h_2) \\
+                                         &= (f(n_1 \psi(h_1)(n_2)), h_1 h_2)  \\
+                                         &= (f(n_1) \cdot (f\circ\psi(h_1))(n_2), h_1 h_2) \\
+                                         &= (f(n_1) \cdot (f \circ \psi(h_1) \circ f^{-1} \circ f) (n_2), h_1 h_2) \\
+                                         &= (f(n_1) \cdot (\hat{f}(\psi(h_1)) \circ f) (n_2), h_1 h_2) \\
+                                         &= (f(n_1) \cdot (\hat{f} \circ \psi)(h_1) f(n_2), h_1 h_2) \\
+                                         &= (f(n_1), h_1) (f(n_2), h_2)\\
+                                         &= \theta(n_1, h_1) \theta(n_2, h_2).
+    \end{align}
+    
+    Con esto hemos demostrado que $\theta$ es homomorfismo pues abre multiplicaciones y manda inversos en 				inversos.\\
+    
+    De manera análoga vemos que $\iota : N \rtimes_{\hat{f} \circ \psi} \rightarrow N \rtimes_\psi H $ 
+    definida por $\iota(n,h) = (f^{-1}(n), h)$ es homomorfismo.\\
+    
+    Ahora notemos que:
+    
+    \begin{align}
+        (\iota \circ \theta) (n, h) = \iota(f(n), h) = (f^{-1}(f(n)), h) = (n,h).
+    \end{align}		
+    
+    Por lo tanto $\iota \circ \theta = id_{N \rtimes_\psi H}$.\\
+    
+    An\'alogamente $\theta \circ \iota = id_{N \rtimes_{\hat{f} \circ \psi} H}$. Por lo tanto, $\theta$ y 
+    $\iota$ son isomorfismos y con esto terminamos la demostración.
+\end{proof}

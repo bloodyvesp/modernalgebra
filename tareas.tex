@@ -1,0 +1,38 @@
+\documentclass[a5paper,oneside]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[scale={.9,.9}]{geometry}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{dsfont}
+\usepackage{amssymb}
+
+\newtheoremstyle{dotless}{}{}{\itshape}{}{\bfseries}{}{ }{}
+\theoremstyle{dotless}
+\renewenvironment{proof}{{\bfseries Demostración:}}
+
+\newtheorem{teorema}{\;\;Teorema}[section]
+\newtheorem{problema}[teorema]{\;\;Problema}
+\newtheorem{definicion}[teorema]{\;\;Definición}
+\newtheorem*{categoria}{Categorías:}
+\newtheorem*{remark}{Remark}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\indic}{\mathds{1}}
+\newcommand{\F}{\mathscr{F}}
+
+\title[Tarea álgebra moderna]{Tarea álgebra moderna\\ Semestre 2013-II\\ Universidad Nacional Autónoma de México\\ Héctor Manuel Téllez Gómez}
+
+\usepackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\begin{document}
+	\maketitle
+	\section*{Proposición 11}
+        \input{proposicion11.tex}
+        
+	\section*{Proposición 12}
+        %\input{proposicion12.tex}
+\end{document}
