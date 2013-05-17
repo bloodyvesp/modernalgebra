@@ -13,25 +13,25 @@ algunas definiciones.
 
 \begin{definicion}
     Un conjunto $\{\sigma_1 , \sigma_2, \dots, \sigma_n\}$ de caracteres de un grupo $G$ en un campo $E$ es
-    \textbf{independiente} si para todo $x \in G$, no existen $a_1, a_2, \dots, a_n \in E$, no todos 0, tales que 
+    \textbf{independiente} si no existen $a_1, a_2, \dots, a_n \in E$, no todos 0, tales que 
     
     \begin{align}
-            \sum a_i \sigma_i{x} = 0 
+            \sum a_i \sigma_i(x) = 0 \;\;\;\; \forall x \in G 
     \end{align}\par\null
     
-    \begin{sloppypar}
-    \tiny
-        \texttt{
-                [\textbf{Nota:} En el libro se define distinto. 
-                Escriben el $x \in G$ hasta el final. 
-                Definido así quedría decir que basta que exista un $x$
-                para el cual la suma nunca se hace $0$ para que el 
-                conjunto de caracteres es independiente.                
-                Es una sutileza del orden en el que se dicen las 
-                cosas y lo investigué en distintas fuentes 
-                para estar seguro.]}
-    \normalsize
-    \end{sloppypar}
+    %\begin{sloppypar}
+    %\tiny
+        %\texttt{
+                %[\textbf{Nota:} En el libro se define distinto. 
+                %Escriben el $x \in G$ hasta el final. 
+                %Definido así quedría decir que basta que exista un $x$
+                %para el cual la suma nunca se hace $0$ para que el 
+                %conjunto de caracteres es independiente.                
+                %Es una sutileza del orden en el que se dicen las 
+                %cosas y lo investigué en distintas fuentes 
+                %para estar seguro.]}
+    %\normalsize
+    %\end{sloppypar}
 \end{definicion}
 
 Ahora estamos listos para el Lema de Dedekind.
@@ -44,14 +44,55 @@ Ahora estamos listos para el Lema de Dedekind.
     Procedemos por inducción sobre $n$. 
     
     \begin{itemize}
-        \item Hipótesis de inducción\par\null
-            Supongamos que el resultado es válido para cierto $n \geq 1$.\par\null
-            
-        \item Paso inductivo\par\null
-        
         \item Base de inducción\par\null
-            Sea $n = 1$. Si $\{\sigma_1\}$ no fuera independiente entonces existiría $x \in G$ y $a_1 \in E$, con $a_1 != 0$ 
+            Sea $n = 1$. Si $\{\sigma_1\}$ no fuera independiente entonces existiría $a_1 \in E$, con $a_1 != 0$ 
             tal que $a_1 \sigma_1(x) = 0$. Pero tanto $a_1$ como $\sigma_1(x)$ son distintos de $0$ y pertenecen a un campo
-            (es decir, a un dominio entero) y por lo tanto no es posible que $a_1 \sigma_1(x) = 0$.\par\null            
+            (es decir, a un dominio entero) y por lo tanto no es posible que $a_1 \sigma_1(x) = 0$.\par\null   
+                    
+         \item Hipótesis de inducción\par\null
+            Sea $n>1$. Y supongamos que para $m < n$ se cumple el resultado.\par\null
+                    
+         \item Paso inductivo\par\null
+            Supongamos que existen $a_1, \dots, a_n \in E$ tales que para todo $x \in G$ se tiene que
+                  
+            \begin{align}
+                    \sum a_i \sigma_i(x) = 0 \label{dedekind:suma} 
+            \end{align}\par\null
+            
+            Por hipótesis de inducción, tenemos que $a_1, \dots, a_n$ son necesariamente todos distintos de cero.
+            También podemos suponer que $a_n = 1$, si no es así, basta multiplicar la suma por $a_n^{-1}$.\par\null
+            
+            Como $\sigma_n \not= \sigma_1$, necesariamente existe $y \in G$ tal que $\sigma_n(y) \not= \sigma_1(y)$.
+            Como \eqref{dedekind:suma} aplica para todo $x \in G$, en particular aplica para $yx$. Entonces tenemos que
+    
+            \begin{align}
+                    \sum a_i \sigma_i(yx)   &=  \sum a_i \sigma_i(y)\sigma_i(x) \\
+                                            &=  0 
+            \end{align}
+            
+            Multiplicando esto por $\sigma_n(y)^{-1}$ y, recordando que $a_n = 1$, obtenemos
+
+            \begin{align}
+                    \sigma_n(y)^{-1} \sum a_i \sigma_i(y)\sigma_i(x)    &=  \sum a_i \sigma_n(y)^{-1}\sigma_i(y)\sigma_i(x)                         \\
+                                                                        &=  \sum_{i < n} a_i \sigma_n(y)^{-1}\sigma_i(y)\sigma_i(x) +   \sigma_n(x) \\
+                                                                        &=  0. 
+            \end{align}
+            
+            Restando esto último de \eqref{dedekind:suma} obtenemos
+            
+            \begin{align}
+                    \sum_{i < n} a_i \sigma_i(x) + \sigma_n(x)  &-  (\sum_{i < n} a_i \sigma_n(y)^{-1}\sigma_i(y)\sigma_i(x) + \sigma_n(x))     \\ 
+                                                                &=  \sum_{i < n} a_i \sigma_i(x) - a_i \sigma_n(y)^{-1}\sigma_i(y)\sigma_i(x)   \\
+                                                                &=  \sum_{i < n} a_i (1 - \sigma_n(y)^{-1}\sigma_i(y)) \sigma_i(x)              \\
+                                                                &=  0.                                                                                                                       
+            \end{align}                                   
+            
+            Por un lado, la hipótesis de inducción nos dice que esto es cierto sólamente si 
+            $a_i (1 - \sigma_n(y)^{-1}\sigma_i(y)) = 0$ para todo
+            $i$. En particular para $i = 1$ tendríamos $a_1 (1 - \sigma_n(y)^{-1}\sigma_1(y)) = 0$. 
+            Como $a_1 \not= 0$ esto obliga a $\sigma_n(y)^{-1}\sigma_1(y) = 1$, y por lo tanto 
+            $\sigma_n(y) = \sigma_1(y)$, lo cual contradice nuestra elección de $y$.\par\null
+            
+            Y con esto hemos demostrado que no existen tales $a_1, \dots, a_n$.
     \end{itemize}
 \end{proof}
