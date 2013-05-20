@@ -1,0 +1,37 @@
+﻿Comenzaremos por hacer las definiciones pertinentes.\par\null
+
+\begin{definicion}
+    Sea $Aut(E)$ el grupo de todos los automorfismos de un campo $E$. Si $G \subset Aut(E)$, 
+    entonces a
+    \begin{align}
+        E^G = \{  \alpha \in E : \sigma(\alpha) = \alpha para todo \sigma \in G \}
+    \end{align}
+    se le llama el \textbf{campo fijo}.
+\end{definicion}
+
+Antes de pasar a la demostraciónde del teorema de Artin, enunciaremos sin demostración un lema que nos
+será de utilidad.
+
+\begin{lema}\label{Artin:lema}
+    Si $G = \{ \sigma_1, \dots, \sigma_n \} \subset Aut(E)$, entonces
+    \begin{align}
+        [E:E^G]     &\geq   n
+    \end{align}
+\end{lema}\par\null
+
+\begin{teorema}[Artin]
+    Si $G=\{ \sigma_1, \dots, \sigma_n \} \leq Aut(E)$, entonces:
+    \begin{align}
+        [E : E^G]   =   \abs{G}
+    \end{align}
+\end{teorema}
+
+\begin{proof}
+    Gracias a [\ref{Artin:lema}] sólo hace falta demostrar que no es posible que $[E : E^G] > n$.
+    Supongamos esto cierto.\par\null
+        
+    Esto significa que existe un conjunto con al menos $n+1$ elementos linealmente independientes en $E$ como
+    $E^G$-espacio vectorial. Sean $\{ \omega_1, \dots, \omega_{n+1} \}$.\par\null
+    
+    
+\end{proof}

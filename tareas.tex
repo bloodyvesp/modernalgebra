@@ -39,6 +39,9 @@
 \newcommand{\indic}{\mathds{1}}
 \newcommand{\F}{\mathscr{F}}
 
+\usepackage{mathtools,etoolbox}
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{{}\cdot{}}{#1}}
+
 \title[Tarea álgebra moderna]{Tarea álgebra moderna\\ Semestre 2013-II\\ Universidad Nacional Autónoma de México\\ Héctor Manuel Téllez Gómez}
 
 
@@ -58,5 +61,9 @@
         \newpage
         
     \section*{Dedekind}
-        \input{Dedekind.tex}        
+        \input{Dedekind.tex}
+        \newpage
+                    
+    \section*{Artin}
+        \input{Artin.tex}        
 \end{document}
