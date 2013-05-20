@@ -4,7 +4,7 @@
     Sea $Aut(E)$ el grupo de todos los automorfismos de un campo $E$. Si $G \subset Aut(E)$, 
     entonces a
     \begin{align}
-        E^G = \{  \alpha \in E : \sigma(\alpha) = \alpha para todo \sigma \in G \}
+        E^G = \{  \alpha \in E : \sigma(\alpha) = \alpha \text{ para todo } \sigma \in G \}
     \end{align}
     se le llama el \textbf{campo fijo}.
 \end{definicion}
@@ -33,5 +33,61 @@ será de utilidad.
     Esto significa que existe un conjunto con al menos $n+1$ elementos linealmente independientes en $E$ como
     $E^G$-espacio vectorial. Sean $\{ \omega_1, \dots, \omega_{n+1} \}$.\par\null
     
+    Consideremos entonces el sistema de $n$ ecuaciones con $n+1$ incógnitas:
     
+    \begin{align}\label{Artin:sistema}
+        \sigma_1(\omega_1)x_1   +   \dots   +   \sigma_1(\omega_{n+1})x_{n+1}   =   0       \\
+                                                                                    \vdots  \\
+        \sigma_n(\omega_1)x_1   +   \dots   +   \sigma_n(\omega_{n+1})x_{n+1}   =   0.     
+    \end{align}\par\null
+    
+    Se trata de un sistema de ecuaciones homogeneo, así que su espacio solución tiene al menos dimensión 1. 
+    Es decir, existe una solución no trivial  sobre $E$. Escogemos una solución
+    que tenga el menor número $r$ de componentes cero, digamos $(a_1, \dots, a_r, 0, \dots, 0)$, podemos
+    asumir que las entradas no cero están en las primeras $r$ entradas (si no es así, basta reordenar la base).\par\null
+    
+    También podemos asumir que $a_r = 1$, de otra manera basta con multiplicar por su inverso en todas las ecuaciones.
+    Notemos ahora que $r \not= 1$, pues $\sigma_1(\omega_1)a_1 = 0$ implicaría $a_1 = 0$.\par\null
+    
+    Notemos también que no todas las $a_i$ pertenecen a $E^G$. De lo contrario, en \eqref{Artin:sistema}, en la
+    ecuación corresopondiente a la $\sigma_j$ que es el automorfismo identidad, tendríamos
+    
+    \begin{align}
+        omega_1 a_1   +   \dots + omega_r  =   0
+    \end{align}
+    
+    contradiciendo la independencia lineal de $\omega_1, \dots, \omega_{n+1}$. Otra vez podemos asumir que $a_i \not\in \E^G$,
+    pues si no es así, bastará un nuevo reordenamiento de la base.\par\null
+    
+    Esto significa que existe $\sigma_k \in G$ tal que $\sigma_k(a_1) \not= a_1$, pues $a_1$ no pertenece al campo fijado por $G$.
+    Analizando la $j$-esima ecuación de \eqref{Artin:sistema}
+    
+    \begin{align}
+        \sigma_j(\omega_1)a_1   +   \dots   +   \sigma_kj\omega_{r})   =   0       \\
+    \end{align}
+    
+    y al aplicarle $\sigma_k$, obtenemos
+        
+    \begin{align} \label{Artin:sistema_convertido}
+        \sigma_k\sigma_j(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_k\sigma_j(\omega_{r})   =   0.       \\
+    \end{align}\par\null
+    
+    Como $G$ es un grupo, $\sigma_k\sigma_1, \sigma_k\sigma_2, \dots, \sigma_k\sigma_n$ es una permutación de
+    $\sigma_1, \sigma_2, \dots, \sigma_n$. Haciendo $\sigma_k \sigma_j = \sigma_i$, la $i$-ésima ecuación de \eqref{Artin:sistema_convertido}
+    es
+    
+    \begin{align}
+        \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})   =   0.       \\
+    \end{align}
+    
+    Restando esta $i$-ésima ecuación de la $i$-ésima ecuación original obtenemos:
+    
+    \begin{align}
+        \sigma_i(\omega_1) a_1   +   \dots   +   \sigma_i(\omega_{r}) - \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})                      =\\
+        \sigma_i(\omega_1) [a_1 - \sigma_k(a_1)]   +   \dots   +  \sigma_i(\omega_1) [a_{r-1} - \sigma_k(a_{r-1})] + \sigma_i(\omega_{r}) - \sigma_i(\omega_{r})    =\\
+        \sigma_i(\omega_1) [a_1 - \sigma_k(a_1)]   +   \dots   +  \sigma_i(\omega_1) [a_{r-1} - \sigma_k(a_{r-1})].  
+    \end{align}
+    
+    Como $a_1 - \sigma_k(a_1) \not=$, hemos encontrado una solución no trivial para \eqref{Artin:sistema} con menos de $r$ componentes no $0$. Lo cual
+    es una contradicción.
 \end{proof}
