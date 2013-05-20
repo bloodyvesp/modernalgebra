@@ -1,0 +1,48 @@
+﻿Antes de continuar con la demostración del teorema de Schur-Zassenhaus, nececitaremos algunas definiciones.
+
+\begin{definicion}
+ Decimos que $H$ es \textbf{complemento de un subgrupo normal} $N$ de $G$, si $H \subset G$ y $G = N \rtimes H$.
+\end{definicion}
+
+\begin{definicion} 
+    Decimos que un subgrupo $H$ de un grupo finito $G$ es un \textbf{subgrupo de Hall} si 
+    $([G:H], |H|) = 1$.
+\end{definicion}
+
+\begin{teorema}[Teorema de Schur-Zassenhaus]
+    Todo subgrupo normal de Hall tiene complemento.
+\end{teorema}
+
+\begin{proof}
+    Sea $Nn$ un subgrupo normal de Hall de un grupo finito $G$. Si $G$ tiene un subgrupo $K$ de orden $n = [G:N]$, entonces
+    tenemos que $N \cap K = 1$ gracias al teorema de Lagrange, pues $n$ y $|N|$ son primos relativos. Entonces
+    
+    \begin{align}
+        |NK|    &= \frac{|N||K|}{|N \cap K|}    \\
+                &= |N||K|                       \\
+                &= |G| 
+    \end{align}
+    
+    y por lo tanto $K$ es un complemento de $G$.\par\null
+    
+    Entonces, sería suficiente probar que $G$ siempre tiene un subgrupo de orden $n$. Para ello procederemos por inducción
+    suponiendo que todo grupo finito de orden menor que $|G|$ que contenga un subgrupo normal de Hall, también
+    tiene un subgrupo cuyo orden es igual al índice de dicho subgrupo.\par\null
+    
+    Sea $P$ un subgrupo de Sylow de $N$. El argumento de Frattini nos dice que $G = N_G(P)N$.\par\null
+    
+    Ahora, $N_N(P) = N_G(P) \cap N$, pues $N_N(P) = \{ g\in N | gP = Pg \}$, y $N_G(P) = \{ g\in G | gP = Pg \}$. es decir
+    si $g_0 \in N_G(P) \cap N$ quiere decir que $g_0 \in N$ y que $g_0P = Pg_0$. Esto demuestra una de las contenciones y la
+    restante es igual de fácil. Ahora,  también tenemos que $N_G(P) \cap N \trianglelefteq N_G(P)$, pues si $g \in N_G(P) \cap N$ y
+    $h \in N_G(P)$, por un lado $hgh^{-1} \in N$ gracias a que $g \in N$ y que $N$ es normal en $G$, y por otro lado 
+    $hgh^{-1} \in N_G(P)$, pues $N_G(P)$ es un subgrupo y tanto $g$ como $h$ son elementos de él.\par\null
+    
+    Ahora, por las equivalencias recién dadas y por el segundo teorema de isomorfismos 
+    (el segundo segúnla numeración de J. Rotman) tenemos lo siguiente:
+    
+    \begin{align}
+            \frac{G}{N}     &=      \frac{N_G(P)N}{N}               \\
+                            &\cong  \frac{N_G(P)}{N_G(P) \cap N}    \\
+                            &=      \frac{N_G(P)}{N_N(P)}
+    \end{align}
+\end{proof}
