@@ -1,0 +1,61 @@
+Comenzaremos por hacer las definiciones pertinentes.\par\null
+
+\begin{definicion}
+    Sea $Aut(E)$ el grupo de todos los automorfismos de un campo $E$. Si $G \subset Aut(E)$, 
+    entonces a
+    \begin{align}
+        E^G = \{  \alpha \in E : \sigma(\alpha) = \alpha \text{ para todo } \sigma \in G \}
+    \end{align}
+    se le llama el \textbf{campo fijo}.
+\end{definicion}
+
+\begin{lema}\label{Artin:lema}
+    Si $G = \{ \sigma_1, \dots, \sigma_n \} \subset Aut(E)$, entonces
+    \begin{align}
+        [E:E^G]     &\geq   n
+    \end{align}
+\end{lema}\par\null
+
+\begin{proof}
+    Supongamos lo contrario, entonces $[E : E^G] = r < n$; sea $\{ \alpha_1, \dots, \alpha_r \}$ una base de $E$ como
+    $E^G$ espacio vectorial. Considere el sistema de $r$ ecuaciones con $n$ incógnitas:
+    \begin{align}
+        \sigma_1(\alpha_1) x_1  +   \dots   + \sigma_n(\alpha_1) x_n  =   0   \\
+        \sigma_1(\alpha_2) x_1  +   \dots   + \sigma_n(\alpha_2) x_n  =   0   \\
+        \vdots                                                                \\
+        \sigma_1(\alpha_r) x_1  +   \dots   + \sigma_n(\alpha_r) x_n  =   0   \\
+    \end{align}
+    
+    Como tenemos menos ecuaciones que incógnitas, existe una solución no tribial $(x_1, \dots, x_n)$. Para cualqueir 
+    $\beta \in E$ existen $b_i \in E^G$, $(1 \leq i \leq r)$ tales que $\beta = \sum b_i \alpha_i$.\par\null
+    
+    Multipliquemos entonces la $i$-ésima ecuación por $b_i$ para obtener el sistema con $i$-éxima ecuación:
+    
+    \begin{align}
+        b_i\sigma_1(\alpha_i) x_1  +   \dots   + b_i\sigma_n(\alpha_i) x_n  =   0  
+    \end{align}
+    
+    Y esto lo podemos reescribir como
+    
+    \begin{align}
+        \sigma(b_i)\sigma_1(\alpha_i) x_1  +   \dots   + \sigma(b_i)\sigma_n(\alpha_i) x_n  =   0   
+    \end{align}
+    
+    dado que $b_i \in E^G$ y los $\sigma_j$ fijan a todos los elementos de este conjunto.\par\null
+    
+    Lo anterior también se puede escribir como:
+        
+    \begin{align}
+        \sigma(b_i\alpha_i) x_1  +   \dots   + \sigma(b_i\alpha_i) x_n  =   0   
+    \end{align}
+    
+    Y sumando todas las ecuaciones del sistema obtenemos:
+    
+    \begin{align}
+        \sigma \left(\sum b_i\alpha_i \right) x_1  +   \dots   + \sigma \left(\sum b_i\alpha_i\right) x_n  = &  \\
+        \sigma(\beta) x_1  +   \dots   + \sigma(\beta) x_n  =&   \;0.   
+    \end{align}\par\null
+    
+    Como $\beta \in E$ fue escogido arbitrariamente, esta última ecuación contradice la independencia de los caracteres
+    $\{ \sigma_1, \dots, \sigma_n \}$.
+\end{proof}

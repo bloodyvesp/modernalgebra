@@ -1,23 +1,4 @@
-﻿Comenzaremos por hacer las definiciones pertinentes.\par\null
-
-\begin{definicion}
-    Sea $Aut(E)$ el grupo de todos los automorfismos de un campo $E$. Si $G \subset Aut(E)$, 
-    entonces a
-    \begin{align}
-        E^G = \{  \alpha \in E : \sigma(\alpha) = \alpha \text{ para todo } \sigma \in G \}
-    \end{align}
-    se le llama el \textbf{campo fijo}.
-\end{definicion}
-
-Antes de pasar a la demostraciónde del teorema de Artin, enunciaremos sin demostración un lema que nos
-será de utilidad.
-
-\begin{lema}\label{Artin:lema}
-    Si $G = \{ \sigma_1, \dots, \sigma_n \} \subset Aut(E)$, entonces
-    \begin{align}
-        [E:E^G]     &\geq   n
-    \end{align}
-\end{lema}\par\null
+﻿
 
 \begin{teorema}[Artin]
     Si $G=\{ \sigma_1, \dots, \sigma_n \} \leq Aut(E)$, entonces:
@@ -63,13 +44,13 @@ será de utilidad.
     Analizando la $j$-esima ecuación de \eqref{Artin:sistema}
     
     \begin{align}
-        \sigma_j(\omega_1)a_1   +   \dots   +   \sigma_kj\omega_{r})   =   0       \\
+        \sigma_j(\omega_1)a_1   +   \dots   +   \sigma_kj\omega_{r})   =   0                                    \\
     \end{align}
     
     y al aplicarle $\sigma_k$, obtenemos
         
     \begin{align} \label{Artin:sistema_convertido}
-        \sigma_k\sigma_j(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_k\sigma_j(\omega_{r})   =   0.       \\
+        \sigma_k\sigma_j(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_k\sigma_j(\omega_{r})   =   0.         \\
     \end{align}\par\null
     
     Como $G$ es un grupo, $\sigma_k\sigma_1, \sigma_k\sigma_2, \dots, \sigma_k\sigma_n$ es una permutación de
@@ -77,14 +58,14 @@ será de utilidad.
     es
     
     \begin{align}
-        \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})   =   0.       \\
+        \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})   =   0.                         \\
     \end{align}
     
     Restando esta $i$-ésima ecuación de la $i$-ésima ecuación original obtenemos:
     
     \begin{align}
-        \sigma_i(\omega_1) a_1   +   \dots   +   \sigma_i(\omega_{r}) - \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})                      =\\
-        \sigma_i(\omega_1) [a_1 - \sigma_k(a_1)]   +   \dots   +  \sigma_i(\omega_1) [a_{r-1} - \sigma_k(a_{r-1})] + \sigma_i(\omega_{r}) - \sigma_i(\omega_{r})    =\\
+        \sigma_i(\omega_1) a_1   +   \dots   +   \sigma_i(\omega_{r}) - \sigma_i(\omega_1)\sigma_k(a_1)   +   \dots   +   \sigma_i(\omega_{r})                  =\\
+        \sigma_i(\omega_1) [a_1 - \sigma_k(a_1)]   +   \dots   +  \sigma_i(\omega_1) [a_{r-1} - \sigma_k(a_{r-1})] + \sigma_i(\omega_{r}) - \sigma_i(\omega_{r})=\\
         \sigma_i(\omega_1) [a_1 - \sigma_k(a_1)]   +   \dots   +  \sigma_i(\omega_1) [a_{r-1} - \sigma_k(a_{r-1})].  
     \end{align}
     
