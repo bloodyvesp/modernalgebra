@@ -1,7 +1,7 @@
 ﻿Antes de continuar con la demostración del teorema de Schur-Zassenhaus, nececitaremos algunas definiciones.
 
 \begin{definicion}
- Decimos que $H$ es \textbf{complemento de un subgrupo normal} $N$ de $G$, si $H \subset G$ y $G = N \rtimes H$.
+    Decimos que $H$ es \textbf{complemento de un subgrupo normal} $N$ de $G$, si $H \subset G$ y $G = N \rtimes H$.
 \end{definicion}
 
 \begin{definicion} 
@@ -43,6 +43,12 @@
     \begin{align}
             \frac{G}{N}     &=      \frac{N_G(P)N}{N}               \\
                             &\cong  \frac{N_G(P)}{N_G(P) \cap N}    \\
-                            &=      \frac{N_G(P)}{N_N(P)}
+                            &=      \frac{N_G(P)}{N_N(P)}.
     \end{align}
+    
+    Entonces $[N_G(P) : N_N(P)] = n$. Como $N_N(P) \subset N$, tenemos que $|N_N(P)|$ divide a $|N|$ y por lo tanto
+    $(|N_N(P)|, n) = 1$. Es decir que $N_N(P)$ es un subgrupo normal de Hall del $N_G(P)$.\par\null
+    
+    Si $N_G(P) < G$, entonces, por hipótesis de inducción $N_G(P)$, y entonces $G$ tiene un subgrupo de orden $n$. Entonces
+    sólo falta el caso en el que $N_G(P) = G$, o equivalentemente, que $P \trianglelefteq G$.
 \end{proof}
