@@ -14,11 +14,11 @@ NormalPos.top=32
 NormalPos.right=1890
 NormalPos.bottom=904
 Class=LaTeXView
-Document=Artin.tex
+Document=SchurZassenhaus.tex
 
 [Frame0_View0,0]
-TopLine=57
-Cursor=4686
+TopLine=6
+Cursor=990
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=32
 NormalPos.right=1890
 NormalPos.bottom=904
 Class=LaTeXView
-Document=tareas.tex
+Document=Artin.tex
 
 [Frame1_View0,0]
-TopLine=7
-Cursor=1193
+TopLine=38
+Cursor=2630
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=32
 NormalPos.right=1890
 NormalPos.bottom=904
 Class=LaTeXView
-Document=Dedekind.tex
+Document=tareas.tex
 
 [Frame2_View0,0]
-TopLine=24
-Cursor=1431
+TopLine=7
+Cursor=1193
 
 [Frame3]
 Flags=0
@@ -68,11 +68,11 @@ NormalPos.top=32
 NormalPos.right=1890
 NormalPos.bottom=904
 Class=LaTeXView
-Document=SchurZassenhaus.tex
+Document=Dedekind.tex
 
 [Frame3_View0,0]
-TopLine=0
-Cursor=553
+TopLine=24
+Cursor=1431
 
 [Frame4]
 Flags=0

@@ -23,19 +23,19 @@
                 &= |G| 
     \end{align}
     
-    y por lo tanto $K$ es un complemento de $G$.\par\null
+    y por lo tanto $K$ es un complemento de $G$.\pn
     
     Entonces, sería suficiente probar que $G$ siempre tiene un subgrupo de orden $n$. Para ello procederemos por inducción
     suponiendo que todo grupo finito de orden menor que $|G|$ que contenga un subgrupo normal de Hall, también
-    tiene un subgrupo cuyo orden es igual al índice de dicho subgrupo.\par\null
+    tiene un subgrupo cuyo orden es igual al índice de dicho subgrupo.\pn
     
-    Sea $P$ un subgrupo de Sylow de $N$. El argumento de Frattini nos dice que $G = N_G(P)N$.\par\null
+    Sea $P$ un subgrupo de Sylow de $N$. El argumento de Frattini nos dice que $G = N_G(P)N$.\pn
     
     Ahora, $N_N(P) = N_G(P) \cap N$, pues $N_N(P) = \{ g\in N | gP = Pg \}$, y $N_G(P) = \{ g\in G | gP = Pg \}$. es decir
     si $g_0 \in N_G(P) \cap N$ quiere decir que $g_0 \in N$ y que $g_0P = Pg_0$. Esto demuestra una de las contenciones y la
     restante es igual de fácil. Ahora,  también tenemos que $N_G(P) \cap N \trianglelefteq N_G(P)$, pues si $g \in N_G(P) \cap N$ y
     $h \in N_G(P)$, por un lado $hgh^{-1} \in N$ gracias a que $g \in N$ y que $N$ es normal en $G$, y por otro lado 
-    $hgh^{-1} \in N_G(P)$, pues $N_G(P)$ es un subgrupo y tanto $g$ como $h$ son elementos de él.\par\null
+    $hgh^{-1} \in N_G(P)$, pues $N_G(P)$ es un subgrupo y tanto $g$ como $h$ son elementos de él.\pn
     
     Ahora, por las equivalencias recién dadas y por el segundo teorema de isomorfismos 
     (el segundo según la numeración de J. Rotman) tenemos lo siguiente:
@@ -44,11 +44,21 @@
             \frac{G}{N}     &=      \frac{N_G(P)N}{N}               \\
                             &\cong  \frac{N_G(P)}{N_G(P) \cap N}    \\
                             &=      \frac{N_G(P)}{N_N(P)}.
-    \end{align}
+    \end{align}\pn
     
     Entonces $[N_G(P) : N_N(P)] = n$. Como $N_N(P) \subset N$, tenemos que $|N_N(P)|$ divide a $|N|$ y por lo tanto
-    $(|N_N(P)|, n) = 1$. Es decir que $N_N(P)$ es un subgrupo normal de Hall del $N_G(P)$.\par\null
+    $(|N_N(P)|, n) = 1$. Es decir que $N_N(P)$ es un subgrupo normal de Hall del $N_G(P)$.\pn
     
     Si $N_G(P) < G$, entonces, por hipótesis de inducción $N_G(P)$, y entonces $G$ tiene un subgrupo de orden $n$. Entonces
-    sólo falta el caso en el que $N_G(P) = G$, o equivalentemente, que $P \trianglelefteq G$.
+    falta el caso en el que $N_G(P) = G$, o equivalentemente, que $P \trianglelefteq G$.\pn
+    
+    Supongamos entonces que $P \trianglelefteq G$ y supongamos que $P \triangleleft N$. Por el teorema de la correspondencia, 
+    tenemos que $\frac{N}{P} \trianglelefteq \frac{G}{P}$ y que $\abs{\frac{G}{P} : \frac{N}{P}} = | G :N | = n$. Como $|\frac{N}{P}|$
+    divide a $|N|$ y $|\frac{G}{P}| < |G|$, por inducción, $\frac{G}{P}$ tiene un subgrupo de orden $n$; este subgrupo debe ser de la forma 
+    $\frac{L}{P}$ donde $P \triangleleft L \leq G$. Ahora, $| L \cap N |$ divide a $|L| = n|P|$ y $|N|$. Como $|N|$  y $n$ son primos relativos, 
+    eso forza a que $|L \cap N|$ divide a $P$ y por lo tanto $P \leq |L \cap N|$. Pero como $P \subset L \cap N$, concluimos que $P = L \cap N$ y en
+    particular $L$ está contenido propiamente en $G$. Como $|P|$ y $| \frac{L}{P}| = n$ son primos relativos, por inducción $L$, y entonces $G$, tiene
+    un subgrupo de orden $n$.\pn
+    
+    Ahora falta el caso en el que $P = N$.
 \end{proof}
