@@ -1,0 +1,134 @@
+﻿Antes de continuar con la demostración del teorema de Schur-Zassenhaus, nececitaremos algunas definiciones.
+
+\begin{definicion}
+    Decimos que $H$ es \textbf{complemento de un subgrupo normal} $N$ de $G$, si $H \subset G$ y $G = N \rtimes H$.
+\end{definicion}
+
+\begin{definicion} 
+    Decimos que un subgrupo $H$ de un grupo finito $G$ es un \textbf{subgrupo de Hall} si 
+    $([G:H], |H|) = 1$.
+\end{definicion}
+
+\begin{teorema}[Teorema de Schur-Zassenhaus]
+    Todo subgrupo normal de Hall tiene complemento.
+\end{teorema}
+
+\begin{proof}
+    Sea $N$ un subgrupo normal de Hall de un grupo finito $G$. Si $G$ tiene un subgrupo $K$ de orden $n = [G:N]$, entonces
+    tenemos que $N \cap K = 1$ gracias al teorema de Lagrange, pues $n$ y $|N|$ son primos relativos. Entonces
+    
+    \begin{align}
+        |NK|    &= \frac{|N||K|}{|N \cap K|}    \\
+                &= |N||K|                       \\
+                &= |G| 
+    \end{align}
+    
+    y por lo tanto $K$ es un complemento de $G$.\pn
+    
+    Entonces, sería suficiente probar que $G$ siempre tiene un subgrupo de orden $n$. Para ello procederemos por inducción
+    suponiendo que todo grupo finito de orden menor que $|G|$ que contenga un subgrupo normal de Hall, también
+    tiene un subgrupo cuyo orden es igual al índice de dicho subgrupo.\pn
+    
+    Sea $P$ un subgrupo de Sylow de $N$. El argumento de Frattini nos dice que $G = N_G(P)N$.\pn
+    
+    Ahora, $N_N(P) = N_G(P) \cap N$, pues $N_N(P) = \{ g\in N | gP = Pg \}$, y $N_G(P) = \{ g\in G | gP = Pg \}$. es decir
+    si $g_0 \in N_G(P) \cap N$ quiere decir que $g_0 \in N$ y que $g_0P = Pg_0$. Esto demuestra una de las contenciones y la
+    restante es igual de fácil. Ahora,  también tenemos que $N_G(P) \cap N \trianglelefteq N_G(P)$, pues si $g \in N_G(P) \cap N$ y
+    $h \in N_G(P)$, por un lado $hgh^{-1} \in N$ gracias a que $g \in N$ y que $N$ es normal en $G$, y por otro lado 
+    $hgh^{-1} \in N_G(P)$, pues $N_G(P)$ es un subgrupo y tanto $g$ como $h$ son elementos de él.\pn
+    
+    Ahora, por las equivalencias recién dadas y por el segundo teorema de isomorfismos 
+    (el segundo según la numeración de J. Rotman) tenemos lo siguiente:
+    
+    \begin{align}
+            \frac{G}{N}     &=      \frac{N_G(P)N}{N}               \\
+                            &\cong  \frac{N_G(P)}{N_G(P) \cap N}    \\
+                            &=      \frac{N_G(P)}{N_N(P)}.
+    \end{align}\pn
+    
+    Entonces $[N_G(P) : N_N(P)] = n$. Como $N_N(P) \subset N$, tenemos que $|N_N(P)|$ divide a $|N|$ y por lo tanto
+    $(|N_N(P)|, n) = 1$. Es decir que $N_N(P)$ es un subgrupo normal de Hall del $N_G(P)$.\pn
+    
+    Si $N_G(P) < G$, entonces, por hipótesis de inducción $N_G(P)$, y entonces $G$ tiene un subgrupo de orden $n$. Entonces
+    falta el caso en el que $N_G(P) = G$, o equivalentemente, que $P \trianglelefteq G$.\pn
+    
+    Supongamos entonces que $P \trianglelefteq G$ y analizaremos el caso en el que $P \triangleleft N$ (contención propia). Por el teorema de la correspondencia, 
+    tenemos que $\frac{N}{P} \trianglelefteq \frac{G}{P}$ y que $\abs{\frac{G}{P} : \frac{N}{P}} = | G :N | = n$. Como $|\frac{N}{P}|$
+    divide a $|N|$ y $|\frac{G}{P}| < |G|$, por inducción, $\frac{G}{P}$ tiene un subgrupo de orden $n$; este subgrupo debe ser de la forma 
+    $\frac{L}{P}$ donde $P \triangleleft L \leq G$. Ahora, $| L \cap N |$ divide a $|L| = n|P|$ y $|N|$. Como $|N|$  y $n$ son primos relativos, 
+    eso forza a que $|L \cap N|$ divide a $P$ y por lo tanto $P \leq |L \cap N|$. Pero como $P \subset L \cap N$, concluimos que $P = L \cap N$ y en
+    particular $L$ está contenido propiamente en $G$. Como $|P|$ y $| \frac{L}{P}| = n$ son primos relativos, por inducción $L$, y entonces $G$, tiene
+    un subgrupo de orden $n$.\pn
+    
+    Ahora falta el caso en el que $P = N$. Para esto dividiremos en dos subcasos.
+
+    \textit{Caso 1. }
+    Si $N$ es un subgrupo no abeliano de $G$, entonces, dado que $N$ es un $p$-grupo, tenemos que $Z=Z(N)$ es un subgrupo propio de $N$ no trivial, y dado que el centro de un grupo es un subgrupo caracter\'istico, tenemos que $Z\vartriangleleft G$. Usando el Teorema de la Correspondencia tenemos que $\frac{G}{Z}$ tiene un subgrupo normal $\frac{G}{N}$ de \'indice $n$. Por inducción tenemos que $\frac{G}{Z}$ tiene un subgrupo de orden $n$ de la forma $\frac{L}{Z}$, donde $Z\vartriangleleft L\leq G$. Por lo tanto, de manera an\'aloga a lo hecho previamente, tenemos que $L\cap N = Z$, lo que en particular nos dice que $L$ es un subgrupo propio de $G$. En este caso se tiene que $|Z|$ y $|\frac{L}{Z}$ son primos relativos, as\'i que, por inducción tenemos que $L$ tiene un subgrupo de orden $n$, el cual también es un subgrupo de $G$.
+
+    \textit{Caso 2. }
+    Sea $H=G/A$ y sea $h\in H$. Sean $t, u\in h$, entonces se tiene que $t^{-1}u\in A$ (dado que $tA = uA = h$), y por lo tanto, dado que $A$ es abeliano, tenemos que para todo $x\in A$ se cumple 
+    \begin{eqnarray*}
+	ux &		=&	tt^{-1}ux,	\\ 
+	ux &		=&	txt^{-1}u, 	\\
+	uxu^{-1} &	=&	 txt^{-1}.	
+    \end{eqnarray*}
+    Por lo tanto podemos definir una acci\'on de $H$ en $A$ por conjugaci\'on, es decir, para cada $h\in H$ y para cada $x\in A$ definimos 
+    \[{}^{h}x := txt^{-1},\]
+    y lo demostrado anteriormente nos dice que dicha acci\'on est\'a bien definido. Notemos que para toda $x, y\in A$ y para toda $h\in H$ se tiene que 
+    \begin{eqnarray*}
+	{}^h(xy) &		=&	t(xy)t^{-1}	\\
+		&	=&	t(xt^{-1}ty)t^{-1}	\\
+		&	=&	(txt^{-1})(tyt^{-1})	\\
+		&	=&	{}^hx{}^hy.
+    \end{eqnarray*}
+    Esto nos dice que dicha acci\'on se puede ver como un homomorfismo de $H$ en $Aut(A)$.
+    
+    Sea $h\in H$ y sea $t_h\in h$. El conjunto $\{t_h : h\in H\}$ es una transversal de $A$ en $G$ que contiene $n$ elementos. Tenemos que para toda $h_1, h_2\in H$ se cumple
+    \begin{eqnarray*}
+	t^{-1}_{h_1h_2}A &	=&	(t_{h_1h_2}A)^{-1}	\\
+			 &	=&	(h_1h_2)^{-1}		\\
+			&	=&	h_2^{-1}h_1^{-1} 	\\
+			&	=&	(t_{h_2^{-1}}A)(t_{h_1^{-1}}A),
+    \end{eqnarray*}
+    por lo tanto $t_{h_1}t_{h_2}t^{-1}_{h_1h_2}\in A$. Sea $f:H\times H\rightarrow A$ la funci\'on definida para $(h_1, h_2)\in H\times H$ por
+    \[f(h_1, h_2) := t_{h_1}t_{h_2}t^{-1}_{h_1h_2},\]
+    por lo tanto $f(h_1, h_2)t_{h_1h_2} = t_{h_1}t_{h_2}$. Entonces tenemos que
+    \begin{eqnarray*}
+	t_{h_1}(t_{h_2}t_{h_3}) & 	=&	t_{h_1}f(h_2, h_3)t_{h_2h_3}	\\
+				&	=&	(t_{h_1}f(h_2, h_3)t_{h_1}^{-1})t_{h_1}t_{h_2h_3}	\\
+				&	=&	{}^{h_1}f(h_2h_3)f(h_1, h_2h_3)t_{h_1h_2h_3},	\\
+    \end{eqnarray*}
+    y también
+    \begin{eqnarray*}
+     (t_{h_1}t_{h_2})t_{h_3}& 		=&	f(h_1, h_2)t_{h_1h_2}t_{h_3} \\
+			      &		=&	f(h_1, h_2)f(h_1h_2, h_3)t_{h_1h_2h_3}.
+    \end{eqnarray*}
+    Por lo tanto, para todas $h_1, h_2, h_3\in H$ tenemos que $f$ satisface
+    \begin{equation}
+	\label{cocycle}
+	{}^{h_1}f(h_2h_3)f(h_1, h_2h_3) = f(h_1, h_2)f(h_1h_2, h_3)
+    \end{equation}
+    
+    Sea $e:H\rightarrow A$ la funci\'on definida para $h\in H$ por 
+    \[e(h) := \prod_{k\in H}f(h, k).\]
+    Usando la ecuaci\'on \ref{cocycle} tenemos que 
+    \begin{eqnarray*}
+	f(h_1, h_2)^ne(h_1h_2) & 	=&	f(h_1, h_2)^n\prod_{h_3\in H} f(h_1h_2, h_3)	\\
+			&	=&	\prod_{h_3\in H} \big(f(h_1, h_2)f(h_1h_2, h_3)\big) 	\\
+			&	=&	\prod_{h_3\in H} \big({}^{h_1}f(h_2h_3)f(h_1, h_2h_3)\big) 	\\
+			&	=&	{}^{h_1}\left(\prod_{k\in H}f(h_2, k)\right)\left(\prod_{k\in H}f(h_1, k)\right)	\\
+			&	=&	{}^{h_1}e(h_2)e(h_1).
+    \end{eqnarray*}
+    Por lo tanto, dado que $A$ es abeliano, para todos $h_1, h_2\in H$ se tiene que
+    \begin{eqnarray*}
+	f(h_1, h_2)^n &	 =&	 {}^{h_1}e(h_2)e(h_1)e(h_1h_2)^{-1}
+			 =&	e(h_1h_2)^{-1}e(h_1){\,}^{h_1}e(h_2),
+    \end{eqnarray*}
+    y también que para todas $x,y\in X$ se tiene que $(xy)^n = x^ny^n$, lo que nos dice que la funci\'on definida por $x\mapsto x^n$ es un automorfismo, dado que $n$ y $|A|$ son primos relativos. Denotaremos por $\sqrt[n]{x}$ a la preimagen de $x$ bajo dicho automorfismo. Es f\'acil ver que para toda $x\in A$ se tiene que $\sqrt[n]{xy} = \sqrt[n]{x}\sqrt[n]{y}$ y que $\sqrt[n]{x^{-1}} = \sqrt[n]{x}^{-1}$. Sea $c:H\rightarrow A$ la funci\'on definida para $h\in H$ por
+    \[c(h) := \sqrt[n]{x}^{-1},\]
+    por lo tanto se tiene que
+    \begin{eqnarray*}
+	f(h_1, h_2) = 
+    \end{eqnarray*}
+
+\end{proof}

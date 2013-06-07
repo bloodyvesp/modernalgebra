@@ -1,0 +1,41 @@
+\begin{teorema}[Hall]
+    Sea $G$ un grupo finito soluble de orden $mn$, donde $m$ y $n$ son primos relativos. Entonces existe un subgrupo $H\leq G$ de orden $n$.
+\end{teorema}
+
+\begin{proof}
+    Sea $\pi$ el conjunto de los primos que dividen a $n$. Sea $M$ un subgrupo de $G$ normal minimal. Tenemos que existe un primo $p$ tal que $M$ es un $p$-grupo elemental abeliano. Dividiremos en dos casos.
+
+    \textit{Caso 1. } Supongamos que $p\in \pi$.
+	Sea $\vert M\vert = p^{\alpha}$. Entonces
+	\[\vert G/M\vert = \frac{mn}{p^{\alpha}} = mn_{1},\]
+	donde $n = n_1p^{\alpha}$. Por inducci\'on el resultado se cumple para $G/M$. El Teorema de la Correspondencia nos dice que un $\pi$-subgrupo de Hall de $G/M$ es de la forma $H/M$, donde $H$ es un subgrupo de $G$ que contiene a $M$. Entonces $\vert H/M \vert = n_1$, por lo tanto
+	\[\vert H\vert = n_1\vert M\vert = n_1p^{\alpha} = n.\]
+
+    \textit{Caso 2.} No hay grupos normales minimales de $G$ que sean $p$-subgrupos elementales abelianos para $p\in \pi$.
+	En particular nuestro subgrupo normal minimal $M$ satisface $\vert M\vert = q^{\beta}$, con $q\not\in \pi$. Entonces
+	\[\vert G/M\vert = \frac{mn}{q^{\beta}} = m_1n,\]
+	donde $m = m_1q^{\beta}$. Ahora subdividiremos en dos casos de acuerdo a $n_1$.
+
+	\textit{Subcaso 2.1} Supongamos que $m_1 \neq 1$.
+		Entonces, por inducci\'on tenemos que $G/M$ tiene un $\pi$-subgrupo de Hall, el cual tiene la forma $K/M$, donde $K$ es un subgrupo de $G$ que contiene a $M$ y
+		\[\vert K/M\vert = n.\]
+		Entonces
+		\[\vert K\vert = n\vert M\vert = nq^{\beta} = \frac{mn}{m_1} < mn.\]
+		Aplicaremos nuevamente inducci\'on a $K$, el cual tiene un orden m\'as peque\~no que el de $G$ y, por lo tanto, tiene un $\pi$-subgrupo de Hall $H$. Entonces $\vert H\vert = n$, as\'i que $H$ tambi\'en es un subgrupo de Hall de $G$.
+
+	\textit{Subcaso 2.2} Supongamos que $m_1 = 1$, entonces $\vert G\vert = nq^{\beta}$.
+		Tenemos que $\vert G/M\vert = m>1$. Sea $N/M$ un subgrupo normal minimal de $G/M$. Entonce existe un primo $p\in \pi$ tal que $N/M$ es un $p$-grupo elemental abeliano. Sea $\alpha$ tal que $\vert N/M\vert = p^{\alpha}$. Entonces $N\trianglelefteq G$ y 
+		\[\vert N\vert = p^{\alpha}q^{\beta}.\]
+		Sea $P$ un $p$-subgrupo de Sylow de $N$. Entonces aplicando el Argumento de Frattini tenemos que 
+		\[G = N_G(P)N.\]
+		Y como $N = PM$, tenemos que
+		\[G = N_G(P)PM = N_G(P)M.\]
+		Ahora consideremos $J = N_G(P)\cap M$. Dado que $M$ es abeliano, tenemos que $J\trianglelefteq M$, y tambi\'en $J = N_G(P)\cap M \trianglelefteq N_G(P)$, dado que $M\trianglelefteq G$. Por lo tanto
+		\[J \trianglelefteq N_G(P)M = G.\]
+		Pero $M$ es un subgrupo normal minimal de $G$, as\'i que $J=1$ o $J=M$.
+		
+		Si $J = N_G(P)\cap M = M$, entonces $M\leq N_G(P)$, as\'i que $G=N_G(P)$. Por lo tanto $P$ es un $p$-subgrupo normal de $G$ y alg\'un subgrupo de $P$ es un subgrupo normal minimal de $G$, y entonces es un $p$-subgrupo elemental abeliano con $p\in \pi$. Esto contradice la suposici\'on general para el \textit{Caso 2.}
+		
+		Entonces $J = 1$, y as\'i $N_G(P)\cap M = 1$. Ahora
+		\[nq^{\beta} = \vert G\vert 
+\end{proof}

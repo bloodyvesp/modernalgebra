@@ -1,0 +1,38 @@
+\begin{lema}
+    Para toda $n\in \mathbb{N}$, si $n\geq 3$, entonces todo elemento de $A_n$ es producto de $3$-ciclos.
+\end{lema}
+\begin{proof}
+    Sea $\alpha\in A_n$. Entonces existe una cantidad par de transposiciones $\tau_1, \tau_2, \ldots, \tau_{2q}\in S_n$ tales que
+    \[\alpha = \tau_1 \tau_2 \cdots \tau_{2q}.\]
+    Sin p\'erdida de generalidad podemos asumir que para toda $i\in \{1,2, \ldots, q\}$ se tiene que $\tau_{2i-1}\neq \tau_{2i}$. Entonces tenemos dos casos.
+    
+    \textit{Caso 1. }  Si $\tau_{2i}-1$ y $\tau_{2i}$ no son transposiciones disjuntas tenemos que
+    \begin{eqnarray*}
+	\tau_{2i}-1\tau_{2i}	&	=&	(i\ j)(j\ k)			\\
+				&	=&	(i\ j\ k).
+    \end{eqnarray*}
+    
+    \textit{Caso 2. } Si $\tau_{2i}-1$ y $\tau_{2i}$ son transposiciones disjuntas tenemos que
+    \begin{eqnarray*}
+	\tau_{2i}-1\tau_{2i}	&	=&	(i\ j)(k\ l)			\\
+				&	=&	(i\ j)(j\ k)(j\ k)(k\ l)	\\
+				&	=&	(i\ j\ k)(j\ k\ l).
+    \end{eqnarray*}
+\end{proof}
+
+
+
+\begin{teorema}
+    Para toda $n\in \mathbb{N}$, si $n\geq 5$, entonces $A_n$ es un grupo simple.
+\end{teorema}
+
+\begin{proof}
+    Primero probaremos que $A_5$ es un grupo simple. Sea $Id_{5}\lneq H\trianglelefteq A_5$. Sea $Id_{5}\neq \sigma \in H$. Sin p\'erdida de generalidad podemos asumir que $\sigma = (1\ 2\ 3)$, $\sigma = (1\ 2)(3\ 4)$ o $\sigma = (1\ 2\ 3\ 4\ 5)$. Si $\sigma$ es un $3$-ciclo tenemos que, como todos los $3$-ciclos son conjugados en $A_n$, entonces todos los $3$-ciclos est\'an en $H$ y, por el lema anterior tenemos que $H = A_5$. Si $\sigma = (1\ 2)(3\ 4)$, definimos $\tau = (1\ 2)(3\ 5)$. Tenemos que $H$ contiene a $(\tau\sigma\tau^{-1})\sigma^{-1} = (3\ 4\ 5)$, dado que $H$ es un subgrupo normal, con lo que conclu\'imos que $H = A_5$. Si $\sigma = (1\ 2\ 3\ 4\ 5)$, definimos $\rho = (1\ 3\ 2)$. Tenemos que $H$ contiene a $(\rho\sigma\rho^{-1})\sigma^{-1} = (1\ 3\ 4)$, dado que $H$ es un subgrupo normal, con lo que conclu\'imos de igual forma que $H = A_5$.
+
+    Para probar que $A_6$ es un grupo simple tomemos $Id_{5}\lneq H\trianglelefteq A_6$. Supongamos primero que existe un elemento $\alpha\in H$ y existe $i\in \{1,2,\ldots, 6\}$ tales que $\alpha(i) = i$. Sea
+    \[ F = \{\sigma\in A_6 : \sigma(i) = i\}.\]
+    Notemos que $\alpha\in H\cap F$, por lo tanto $H\cap F\neq \{Id_{5}\}$. El Segundo Teorema de Isomorfismo nos dice que $H\cap F\vartriangleleft F$. Como $F\cong A_5$, tenemos que es simple y por lo tanto $H\cap F = F$, lo que es decir que $F\leq H$. De aqu\'i tenemos que $H$ contiene un $3$-ciclo y, por lo tanto, $H = A_6$. Ahora supongamos que no existe en $H$ tal elemento $\alpha$ no trivial que fije a alguna $i$. Tenemos que $\alpha$ s\'olo puede tener la estructura c\'iclica $(1\ 2)(3\ 4\ 5\ 6)$ o $(1\ 2\ 3)(4\ 5\ 6)$. En el primer caso tenemos que el cuadrado de la permutaci\'on fija a un punto, por lo tanto no puede tener dicha estructura. En el segundo caso tenemos que la permutación $\alpha(\beta\alpha^{-1}\beta^{-1})$, donde $\beta = (2\ 3\ 4)$, y se puede verificar facilmente que éste es un elemento no trivial que fija a un punto, por lo tanto $\alpha$ tampoco puede tener dicha estructura c\'iclica, con lo que conclu\'imos que un grupo $H$ as\'i no puede existir.
+
+    Por \'ultimo probaremos que para $n\geq 7$ tenemos que $A_n$ es simple. Sea $Id_{5}\lneq H\trianglelefteq A_n$. Sea $\beta\in H$ un elemento no trivial y sea $i$ un punto movido por $\beta$. Sea $\alpha$ un $3$-ciclo que mueva a $j = \beta(i)$ y que fije a $i$. Es fácil ver que $\beta\alpha \neq \alpha\beta$. De aqu\'i se sigue que el elemento $\gamma = \alpha(\beta\alpha^{-1}\beta^{-1})$ es no trivial. Tenemos que $\beta\alpha^{-1}\beta^{-1}$ es un $3$-ciclo, por lo tanto $\gamma$ es un producto de dos $3$-ciclos, de donde tenemos que $\gamma$ mueve a, a lo m\'as, 6 puntos. Si aplicamos la misma t\'ecnica que en el p\'arrafo anterior tenemos el resultado completo.
+\end{proof}
+

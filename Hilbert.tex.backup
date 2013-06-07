@@ -1,0 +1,32 @@
+\begin{definicion}
+    Sea $E/F$ una extensi\'on de Galois y sea $\alpha\in E\setminus\{0\}$. Definimos la norma $N(\alpha)$ de $\alpha$ por \[N(\alpha) := \prod_{\sigma \in Gal(E/F)}\sigma(\alpha).\]
+\end{definicion}
+
+
+\begin{Teorema}[Teorema de Hilbert]
+    Sea $E/F$ una extensi\'on de Galois cuyo grupo de Galois $G = Gal(E/F)$ es c\'iclico de orden $n$. Sea $\sigma$ un generador de $G$. Entonces $N(\alpha) = 1$ si y s\'olo si existe $\beta\in E\setminus \{0\}$ tal que \[\alpha = \beta\sigma (\beta)^{-1}.\]
+\end{Teorema}
+
+\begin{proof}
+    Si $\alpha = \beta\sigma (\beta)^{-1}$, entonces
+    \begin{eqnarray*}
+	N(\alpha) &	=&	N(\beta\sigma (\beta)^{-1})		\\
+		  &	=&	N(\beta)N\big(\sigma(\beta)^{-1}\big)	\\
+		  &	=&	N(\beta)N\big(\sigma(\beta)\big)^{-1}	\\
+		  &	=&	N(\beta)N(\beta)^{-1}			\\
+		  &	=&	1.
+    \end{eqnarray*}
+
+    Para probar la implicaci\'on contraria definamos la siguiente sucesi\'on
+    \begin{eqnarray*}
+	\delta_0 &		=&		\alpha,					\\
+	\delta_1 &		=&		\alpha\sigma(\alpha),			\\
+	\delta_2 &		=&		\alpha\sigma(\alpha)\sigma^{2}(\alpha),	\\
+		 &		\vdots&							\\
+	\delta_{n-1} &		=&		\alpha\sigma(\alpha)\sigma^{2}(\alpha)\cdots\sigma^{n-1}(\alpha).
+    \end{eqnarray*}
+    Dado que $\langle \sigma\rangle = Gal(E/F)$, tenemos que $\delta_{n-1} = N(\alpha) = 1$. Ahora, tenemos que para toda $i \in \{0,1,\ldots, n-2\}$ se tiene que
+    \[\alpha\sigma(\delta_i) = \delta_{i+1}.\]
+    Tenemos que los caracteres $\{1, \sigma, \sigma^2, \ldots, \sigma^{n-1}\}$ son independientes, por lo tanto existe $\gamma\in E$ tal que
+    \[\delta_0\gamma + \delta_1\sigma(\gamma) + \delta_2\sigma^2(\gamma) + \cdots + \delta_{n-2}\sigma^{n-2}(\gamma) + \sigma^{n-1}(\gamma) = \beta \neq 0\]
+\end{proof}

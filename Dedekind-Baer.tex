@@ -1,0 +1,80 @@
+\begin{definicion}
+        Un grupo no abeliano $G$ es \textbf{Hamiltoniano} si todos sus subgrupos son normales.
+\end{definicion}
+
+Antes de pasar a la demostración del teorema de Dedekind-Baer, necesitaremos el siguiente lema.
+
+\begin{lema}\label{Lema_Dedekind_Baer}
+    Sea $G$ un grupo y $x,y \in G$ tales que $[x,y]$ conmuta con $x$ y $y$. Entonces
+    \begin{enumerate}
+        \item[(i)]
+            $[x^i, y^j] = [x,y]^{ij}$, donde $i,j \in \Z$.
+        \item[(ii)]
+            $(xy)^i  =   x^iy^i [y,x]^{\binom{i}{2}}$, donde $i \in \N$.
+    \end{enumerate}
+\end{lema}
+
+\begin{teorema}[Dedekind, Baer]
+    $G$ es Hamiltoniano si y sólo si 
+    \begin{align}
+        G \cong Q_8 \times A \times B
+    \end{align}
+    donde $Q_8$ es el grupo de los cuaterniones, $A$ es un 2-grupo abeliano elemental, 
+    y $B$ es un gruop abeliano donde sus elementos son de orden impar.
+\end{teorema}
+
+\begin{proof}
+    Suficiencia. Sea $H < G$. Entonces $H = (H \cap (Q_8 \times A)) \times (H \cap B)$.
+    Es suficiente mostrar que $H_1 = H \cap (Q_8 \times A) \triangleleft Q_8 \times A$. Si $H_1$
+    contiene un elemento de orden 4 (quien forzosamente pertenece a $Q_8$), entonces 
+    $\{ h^2 : h \in H_i\} = Z(Q_8) = G' = \subset H_1$, así que $H \triangleleft G$. Si
+    $H_1$ no contiene a un elemento de orden 4, (no contiene a alguno de los generadores de $Q_8$),
+    entonces $H_1 \subset Z(G)$ y $H_1 \triangleleft G$.\pn
+    
+    Necesidad. 
+    Sean $x,y \in G$ tales que $c = [x,y] \neq 1$. Como 
+    $<x>, <y> \triangleleft G \Leftrightarrow c \in <x> \cap <y>$. Es decir, para algunos $i,j \in \Z$
+    tenemos $c = x^i = y^j$. Si definimos $Q = <x,y>$, entonces $Q' = <c> \subset Z(Q)$. Por el lema
+    \ref{Lema_Dedekind_Baer}, $c^i = [x^i, y] = [c, y] = 1$ y por lo tanto $x,y$ son de orden finito.\pn
+
+    Supóngase ahora que $o(x) + o(y)$ es mínimo (donde $o$ denota ``orden de''). Sea $p$ un factor primo de $o(x)$.
+    La minimalidad de $o(x) + o(y)$ implica que $1 = [x^p, y] = c^p$. Así que $o(c) = p$. También, $o(x)$ no
+    puede tener factores primos distintos de $p$, así que $o(x)$ (y $o(y)$) tienen que ser potencias de $p$.
+    Escribamos ahora $c = x^{\alpha p^r} = y^{\beta p^s}$ con $\alpha, \beta \in Z$ y $r,s \in \N$ tales que
+    $p \nmid \alpha, \beta$. Entonces $o(x) = p^{r+1}$ y $o(s) = p^{s+1}$. Sean ahora $\alpha', \beta' \in \Z$
+    tales que $\alpha' \alpha \equiv \beta' \beta \equiv 1 \,(mod\, p)$. Entonces
+    \begin{align}
+                x^{\beta' p^r} = x^{\beta' \alpha' \alpha p^r} = c^{\alpha' \beta'} = y^{\alpha' \beta' \beta p^s} = y^{\alpha' p^s}
+    \end{align}\pn
+    
+    de donde $c^{\alpha' \beta'} = [x^{\beta'}, y^{\alpha'}]$. Remplazando $x,y,c$ por $x^{\beta'},y^{\alpha'},c^{\alpha' \beta'}$
+    respectivamente. Dicho todo esto, podemos suponer que $x^{p^r} = y^{p^s} = c$. Nótese que $r, s > 0$ o de otra manera ocurriría que
+    $[x,y] = 1$.\pn
+
+    Sin pérdida de generalidad, supongamos que $r \geq s$. Como $x^{- p^{r-s}} y$ no conmuta con $x$, por la minimalidad
+    de $o(x) + o(y)$, $o(x^{- p^{r-s}} y) \geq o(y) = p^{s+1}$. Por la segunda parte de \ref{Lema_Dedekind_Baer},
+    
+    \begin{align}
+            1 \neq (x^{- p^{r-s}} y)^{p^s} = x^{- p^{r}} y^{- p^{s}} [y, x^{- p^{r-s}}]^{\binom{p^s}{2}} = 
+            [y, x]^{-p^{r-s} \binom{p^s}{2}} =   c^{-\frac{1}{2} p^r (p^s - 1)}.
+    \end{align}
+    
+    Así que, $p \nmid \frac{1}{2} p^r(p^s - 1)$ y por lo tanto, $p$ está forzado a ser $2$ y entonces 
+    $r$ a ser $1$. Entonces $o(x) = 4$, $x^2 = y^2$, $yxy^{-1} = x^{-1}$ y estas condiciones, junto que $Q$ es no abeliano, 
+    forzan a $Q$ a ser isomorfo a $Q_8$.\pn
+    
+    Veamos que $G = QC$, donde $C = C_G(Q)$. Sea $g \in G$, Entonces $gxg^{-1} = x^{\pm 1} = x^{(-1)^a}$ y análogamente para $y$,
+    $gyg^{-1} = y^{\pm 1} = y^{(-1)^b}$, con $a,b \in \{0, 1\}$. Es decir que $y^a x^b g$ conmuta con $x$ y $x$ y por lo tanto
+    $y^a x^b g \in C$.\pn
+    
+    Veamos ahora que $C$ no contiene elementos de orden $4$. Supongamos lo contrario y sea $g \in C$ de orden 4. Por ser de
+    orden 4 y pertencer a $C$, $g$ no puede estar en $Q$. Así que $o(gx) = 2$ ó $4$. Como $[gx, y] \neq 1$, $ygxy^{-1} = (gx)^1$, es
+    decir, que $g = g^{-1}$, contradiciendo que $g$ tenía orden 4.\pn
+    
+    Ahora, tenemos que $C$ es abeliano. De lo contrario $C$ sería un grupo Hamiltoniano sin elementos de orden $4$. Contradiciendo que
+    $Q$ es isomorfo a $Q_8$.\pn
+    
+    Veamos ahora que para cada $g \in G$, $gx$ no conmuta con $y$. Tenemos que $o(gx) < \infty$ y por lo tanto $o(g) < \infty$. Entonces, $C$
+    tiene que ser periódico (de torsión). Y por lo tanto, después de todo lo dicho anteriormente, debe ser de la forma $C = A \times B$,
+    con $A$ un 2-grupo elemental abeliano y con $B$ un grupo donde todos sus elementos son de orden impar. Y con esto, termina la demostración.
+\end{proof}

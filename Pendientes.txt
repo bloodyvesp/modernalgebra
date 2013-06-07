@@ -1,0 +1,13 @@
+- Teorema de Hilbert (Lema 95 de J. ROTMAN Galois_Theory_Universitext.djvu, folder de libros principales. Página 104 del documento. Página 91 según la numeración del libro).
+
+- Teorema de Hall (Teorema 8, capítulo 4, sección 11 de Alperin, Groups_and_Representations.djvu, folder de libros principales. Página 111 de documento, página 99 según la numeración del libro).
+
+- A_n es simple para n \geq 5. (Es famoso, pero no lo he buscado en los libros principales).
+
+- Shur-Zassenhauss [está empezado, Está en Alperin, Groups_and_Representations.djvu, folder de libros principales. Página 92 del documento. Página 81 según la numeración del libro].
+    [Está escrito hasta el 5 renglón de abajo hacia arriba de la página 92 del documento (El párrafo que termina en N = P), de ahí en adelante falta].
+        
+- "Grupos libres" (Rotman, Advanced modern algebra p298 [314 del documento]) [Desde la definición de grupo libre con base, hasta la proposición 5.76(todo grupo es cociente de un libre), son como 7 pinches páginas, si te
+avientas este, resume tanto como puede y se algo te da hueva, sólo anótalo].
+
+- "El de los cuaternios" (Encontrado, Huppert_Endliche_Gruppen, en el folder de libros auxiliares. p320 del documento (308 numeración del libro), es una mentada, el libro está en alemán).

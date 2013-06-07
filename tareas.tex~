@@ -1,0 +1,86 @@
+\documentclass[a5paper,oneside]{amsart}
+\usepackage[scale={.8,.85}]{geometry}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{dsfont}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{mathtools}
+\definecolor{azul}{RGB}{20,40,140}
+\usepackage[colorlinks,linkcolor=azul, citecolor=azul,urlcolor=azul]{hyperref}
+\usepackage{attachfile}
+\usepackage{enumitem}
+\usepackage{courier}
+\usepackage{textcomp}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbold}
+
+\usepackage{amssymb}
+\allowdisplaybreaks
+
+\mathtoolsset{showonlyrefs}
+\newtheoremstyle{dotless}{}{}{\itshape}{}{\bfseries}{}{ }{}
+\theoremstyle{dotless}
+\renewenvironment{proof}{{\bfseries Demostración:}}
+
+\newtheorem{teorema}{\;\;Teorema}
+\newtheorem{lema}{\;\;Lema}
+\newtheorem{problema}[teorema]{\;\;Problema}
+\newtheorem{definicion}[teorema]{\;\;Definición}
+\newtheorem*{categoria}{Categorías:}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\indic}{\mathds{1}}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\pn}{\par\null}
+
+\usepackage{mathtools,etoolbox}
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{{}\cdot{}}{#1}}
+
+\title[Tarea álgebra moderna]{Tarea álgebra moderna\\ Semestre 2013-II\\ Universidad Nacional Autónoma de México\\ Héctor Manuel Téllez Gómez}
+
+
+\begin{document}
+	\maketitle
+    
+	\section*{Proposición 11}
+        \input{proposicion11.tex}
+        \newpage
+	
+    \section*{Proposición 12}
+        \input{proposicion12.tex}
+        \newpage
+    
+    \section*{Schur-Zassenhaus}
+        \input{SchurZassenhaus.tex}
+        \newpage
+        
+    \section*{Dedekind}
+        \input{Dedekind.tex}
+        \newpage        
+        
+    \section*{Lema 78}
+        \input{Lema78.tex}
+        \newpage
+                 
+    \section*{Artin}
+        \input{Artin.tex}        
+        \newpage
+
+    \section*{Hilbert}
+        \input{Hilbert.tex}        
+        \newpage
+
+    \section*{An es simple}
+        \input{AnEsSimple.tex}
+        \newpage
+
+    \section*{Dedekind-Baer}
+        \input{Dedekind-Baer.tex}
+\end{document}
